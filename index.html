@@ -8,72 +8,92 @@
     <link rel="stlyesheet"  type="text/css" href="reset.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Style CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="container"></div>
-        <header class="nav">
-            <h1>Weather Dashboard</h1>
-        </header>
-    
-        <main>
-            <div class="jumbotron">
-            <!-- a jumbosized area will show the city name, todays date, and weather information -->
-            <h1 id="city-name"></h1>
-            <h2 id="temperature"></h2>
-            <h2 id="humidity"></h2>
-            <h2 id="wind-speed"></h2>
-            <h2 id="uv-index"></h2>
-            <h2></h2>
-            </div>
+    <div class="container-fluid">
+        <div class="row">
+            <header class="col-12 nav text-white bg-dark">
+                <nav>
+                    <h1>Weather Dashboard</h1>
+                </nav>
+            </header>
+        </div>
+        <div class="row">
+            <aside class="col-3">
+                <label>Search for a City: </label>
+                <div class="input-group mb-3">
+                    <input type="text" id="city-search-input" class="form-control" placeholder="Seattle" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary btn-outline-secondary" type="button" id="city-search-button">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <article>
+                    <!-- new sections will populate with city names that are stored locally -->
+                    <ul class="list-group">
+                        <li class="list-group-item active">Spokane</li>
+                        <li class="list-group-item">Chicago</li>
+                        <li class="list-group-item">New York</li>
+                        <li class="list-group-item">Orlando</li>
+                        <li class="list-group-item">San Francisco</li>
+                    </ul>
+                </article>
+            </aside>
+            <main class="col-9">
+                <div class="jumbotron">
+                    <!-- a jumbosized area will show the city name, todays date, and weather information -->
+                    <h1 id="city-name"></h1>
+                    <span><img id="icon"/></span>
+                    <h2 id="temperature"></h2>
+                    <h2 id="humidity"></h2>
+                    <h2 id="wind-speed"></h2>
+                    <h2 id="uv-index"></h2>
+                    <h2></h2>
+                </div>
             <div class="row">
-            <!-- 5 day forcast -->
-            <div class="col">
-            <h1>5-Day Forecast:</h1>
-            <div id="day-one" class="col-2 badge badge-primary">
-                <h2 id="date-day-one"></h2>
-                <img id="icon-day-one">
-                <h2 id="temperature-day-one"></h2>
-                <h2 id="humidity-day-one"></h2>
+                <!-- 5 day forecast -->
+                <div class="col">
+                    <h1>5-Day Forecast:</h1>
+                <div id="day1" class="col-2 badge badge-primary p-2">
+                    <h2 id="date-day1"></h2>
+                    <img id="icon-day1">
+                    <h2 id="temperature-day1"></h2>
+                    <h2 id="humidity-day1"></h2>
+                </div>
+                <div id="day2" class="col-2 badge badge-primary p-2">
+                    <h2 id="date-day2"></h2>
+                    <img id="icon-day2">
+                    <h2 id="temperature-day2"></h2>
+                    <h2 id="humidity-day2"></h2>
+                </div>
+                <div id="day3" class="col-2 badge badge-primary p-2">
+                    <h2 id="date-day3"></h2>
+                    <img id="icon-day3">
+                    <h2 id="temperature-day3"></h2>
+                    <h2 id="humidity-day3"></h2>
+                </div>
+                <div id="day4" class="col-2 badge badge-primary p-2">
+                    <h2 id="date-day4"></h2>
+                    <img id="icon-day4">
+                    <h2 id="temperature-day4"></h2>
+                    <h2 id="humidity-day4"></h2>
+                </div>
+                <div id="day5" class="col-2 badge badge-primary p-2">
+                    <h2 id="date-day5"></h2>
+                    <img id="icon-day5">
+                    <h2 id="temperature-day5"></h2>
+                    <h2 id="humidity-day5"></h2>
+                </div>
+                </div>
             </div>
-            <div id="day-two">
-                <h2 id="date-day-two"></h2>
-                <h2 id="icon-day-two"></h2>
-                <h2 id="temperature-day-two"></h2>
-                <h2 id="humidity-day-two"></h2>
-            </div>
-            <div id="day-three">
-                <h2 id="date-day-three"></h2>
-                <h2 id="icon-day-three"></h2>
-                <h2 id="temperature-day-three"></h2>
-                <h2 id="humidity-day-three"></h2>
-            </div>
-            <div id="day-four">
-                <h2 id="date-day-four"></h2>
-                <h2 id="icon-day-four"></h2>
-                <h2 id="temperature-day-four"></h2>
-                <h2 id="humidity-day-four"></h2>
-            </div>
-            <div id="day-five">
-                <h2 id="date-day-five"></h2>
-                <h2 id="icon-day-five"></h2>
-                <h2 id="temperature-day-five"></h2>
-                <h2 id="humidity-day-five"></h2>
-            </div>
-            </div>
-            </div>
-            
-        </main>
-        <aside class="col-3">
-            <label>Search for a City: </label>
-            <input type="text" id="city-search-input">
-            <button class="btn btn-primary" id="city-search-button"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-            </svg></button>
-            <article>
-                <!-- new sections will populate with city names that are stored locally -->
-            </article>
-        </aside>
+            </main>
+        </div>
     </div>
     <!-- jQuery -->
     <script
