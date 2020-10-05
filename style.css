@@ -5,3 +5,11 @@ header{
 .badge-orange{
     background-color: orange;
 }
+
+.align-left{
+    justify-content: left;
+}
+
+li {
+    text-transform: capitalize;
+  }

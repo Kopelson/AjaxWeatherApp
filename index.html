@@ -21,7 +21,7 @@
             </header>
         </div>
         <div class="row">
-            <aside class="col-3">
+            <aside class="col-md-3">
                 <label>Search for a City: </label>
                 <div class="input-group mb-3">
                     <input type="text" id="city-search-input" class="form-control" placeholder="Seattle" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -36,59 +36,63 @@
                 </div>
                 <article>
                     <!-- new sections will populate with city names that are stored locally -->
-                    <ul class="list-group">
-                        <li class="list-group-item active">Spokane</li>
+                    <ul class="list-group flex-column-reverse">
                         <li class="list-group-item">Chicago</li>
                         <li class="list-group-item">New York</li>
                         <li class="list-group-item">Orlando</li>
                         <li class="list-group-item">San Francisco</li>
+                        <li class="list-group-item active">Spokane</li>
                     </ul>
+                    <button class="btn btn-danger" onclick="clearCityList()">Clear</button>
                 </article>
             </aside>
-            <main class="col-9">
+            <main class="col-md-9">
                 <div class="jumbotron">
                     <!-- a jumbosized area will show the city name, todays date, and weather information -->
-                    <h1 id="city-name"></h1>
+                    <h3 id="city-name"></h3>
                     <span><img id="icon"/></span>
-                    <h2 id="temperature"></h2>
-                    <h2 id="humidity"></h2>
-                    <h2 id="wind-speed"></h2>
-                    <h2 id="uv-index"></h2>
-                    <h2></h2>
+                    <h6 id="temperature"></h6>
+                    <h6 id="humidity"></h6>
+                    <h6 id="wind-speed"></h6>
+                    <h6 id="uv-index"></h6>
                 </div>
             <div class="row">
-                <!-- 5 day forecast -->
                 <div class="col">
-                    <h1>5-Day Forecast:</h1>
-                <div id="day1" class="col-2 badge badge-primary p-2">
-                    <h2 id="date-day1"></h2>
+                    <h3 class="ml-4">5-Day Forecast:</h3> 
+                </div>
+            </div>
+            <div class="row">
+                <!-- 5 day forecast -->
+                <div class="col-md-12 d-flex justify-content-sm-between" id="forecast">
+                <div id="day1" class="col-2 badge badge-primary p-2 m-2">
+                    <h6 id="date-day1"></h6>
                     <img id="icon-day1">
-                    <h2 id="temperature-day1"></h2>
-                    <h2 id="humidity-day1"></h2>
+                    <h6 id="temperature-day1"></h6>
+                    <h6 id="humidity-day1"></h6>
                 </div>
-                <div id="day2" class="col-2 badge badge-primary p-2">
-                    <h2 id="date-day2"></h2>
+                <div id="day2" class="col-2 badge badge-primary p-2 m-2">
+                    <h6 id="date-day2"></h6>
                     <img id="icon-day2">
-                    <h2 id="temperature-day2"></h2>
-                    <h2 id="humidity-day2"></h2>
+                    <h6 id="temperature-day2"></h6>
+                    <h6 id="humidity-day2"></h6>
                 </div>
-                <div id="day3" class="col-2 badge badge-primary p-2">
-                    <h2 id="date-day3"></h2>
+                <div id="day3" class="col-2 badge badge-primary p-2 m-2">
+                    <h6 id="date-day3"></h6>
                     <img id="icon-day3">
-                    <h2 id="temperature-day3"></h2>
-                    <h2 id="humidity-day3"></h2>
+                    <h6 id="temperature-day3"></h6>
+                    <h6 id="humidity-day3"></h6>
                 </div>
-                <div id="day4" class="col-2 badge badge-primary p-2">
-                    <h2 id="date-day4"></h2>
+                <div id="day4" class="col-2 badge badge-primary p-2 m-2">
+                    <h6 id="date-day4"></h6>
                     <img id="icon-day4">
-                    <h2 id="temperature-day4"></h2>
-                    <h2 id="humidity-day4"></h2>
+                    <h6 id="temperature-day4"></h6>
+                    <h6 id="humidity-day4"></h6>
                 </div>
-                <div id="day5" class="col-2 badge badge-primary p-2">
-                    <h2 id="date-day5"></h2>
+                <div id="day5" class="col-2 badge badge-primary p-2 m-2">
+                    <h6 id="date-day5"></h6>
                     <img id="icon-day5">
-                    <h2 id="temperature-day5"></h2>
-                    <h2 id="humidity-day5"></h2>
+                    <h6 id="temperature-day5"></h6>
+                    <h6 id="humidity-day5"></h6>
                 </div>
                 </div>
             </div>
