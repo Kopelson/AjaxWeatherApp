@@ -6,12 +6,12 @@ $("#city-search-button").on("click", function(){
     const apiKey = "&appid=27ffb5b5dc6407d635a7bcd87cd32739";
     //city name, state code and country code divided by comma, use ISO 3166 country codes.
     const query = "q=";
-    //openweathermap.org request url
-    const url = "https://api.openweathermap.org/data/2.5/weather?";
+    //openweathermap.org request url for daily
+    const urlWeather = "https://api.openweathermap.org/data/2.5/weather?";
     //combine url, query, and api key to get a query url
-    const queryurl = url + query + city + apiKey;
+    const queryurlWeather = urlWeather + query + city + apiKey;
 
-    $.ajax({url: queryurl, method:"GET"}).then(function(response){
+    $.ajax({url: queryurlWeather, method:"GET"}).then(function(response){
         console.log(response);
         $("#city-name").text(response.name);
         $("#temperature").text("Temperature: " +tempKtoF(response.main.temp) + "°F");
@@ -19,6 +19,17 @@ $("#city-search-button").on("click", function(){
         $("#wind-speed").text("Wind Speed: " + response.wind.speed + " MPH");
         getUVIndex(apiKey, response.coord.lat, response.coord.lon);
 
+    });
+
+    const urlForecast = "https://api.openweathermap.org/data/2.5/forecast?";
+
+    const queryurlForecast = urlForecast + query + city + apiKey;
+    $.ajax({url: queryurlForecast, method:"GET"}).then(function(response){
+        console.log(response);
+        $("#date-day-one").text(response.list[3].dt_txt);
+        $("#icon-day-one").attr("src", "http://openweathermap.org/img/wn/" + response.list[3].weather[0].icon  + "@2x.png");
+        $("#temperature-day-one").text("Temperature: " +tempKtoF(response.list[3].main.temp) + "°F");
+        $("#humidity-day-one").text("Humidity: " + response.list[3].main.humidity + "%");
     });
 });
 
