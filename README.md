@@ -30,6 +30,21 @@ Project Link: https://kopelson.github.io/ajaxWeatherApp/
 
 ## Credits
 
+### OpenWeatherMap.org
+  * API documentation https://openweathermap.org/api
+
+### jQuery
+  * jQuery website https://jquery.com/
+
+### Bootstrap
+  * Bootstrap website https://getbootstrap.com/
+  
+### Trilogy Education Services
+  * Thanks Trilogy for project idea
+
+### Tutorials
+  * How convert a UNIX Time Stamp using Date https://www.w3schools.com/jsref/jsref_obj_date.asp
+
 ## License
 
 ### MIT License
