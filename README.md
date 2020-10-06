@@ -9,8 +9,24 @@
 * [License](#license)
 
 ## Overview
-
 Project Link: https://kopelson.github.io/ajaxWeatherApp/
+![overview](https://user-images.githubusercontent.com/57735283/95258455-a5271900-07da-11eb-8493-18c27100543b.PNG)
+
+### Responsive Design
+![responsive](https://user-images.githubusercontent.com/57735283/95257999-fa165f80-07d9-11eb-9e26-51c2c18cc9a6.gif)
+
+### Search by City
+![search](https://user-images.githubusercontent.com/57735283/95258003-fbe02300-07d9-11eb-979a-a5a8c303a52d.gif)
+
+### Error Handler
+![errorHandler](https://user-images.githubusercontent.com/57735283/95258025-039fc780-07da-11eb-93b8-fc79c30d6100.gif)
+
+### Clear City List
+![clear](https://user-images.githubusercontent.com/57735283/95258006-fe427d00-07d9-11eb-9dc4-ad55e4d06f4f.gif)
+
+### Store Custom City List
+![localstorage](https://user-images.githubusercontent.com/57735283/95258015-013d6d80-07da-11eb-845e-39c3c0250d03.gif)
+
 
 ## Credits
 
