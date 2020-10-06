@@ -63,7 +63,7 @@ $.ajax({url: queryurl, method:"GET"}).then(function(response){
     //selects id city-name and fills the text with city name and todays date
     $("#city-name").text(response.name + " " + timeConverter(response.dt));
     //selects id icon and adds the attribute src and the weather icon data
-    $("#icon").attr("src", "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png")
+    $("#icon").attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png")
     //selects id temperature and fills the text with temperature data that converted to Fahrenheit through the tempKtoF function 
     $("#temperature").text("Temperature: " +tempKtoF(response.main.temp) + "°F");
     //selects id humidity and fills the text with humidity data
