@@ -6,10 +6,17 @@ header{
     background-color: orange;
 }
 
-.align-left{
-    justify-content: left;
-}
-
 li {
     text-transform: capitalize;
   }
+
+@media only screen and (max-width: 975px) {
+    #day1, #day2, #day3, #day4, #day5 {
+        display: block !important;
+        justify-content: center;
+        align-items: center;
+        width:100% !important;
+        height: auto;
+    }
+    
+}
