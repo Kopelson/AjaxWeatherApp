@@ -3,7 +3,7 @@
 ## Description
  <p>This weather app focuses on using OpenWeatherMap.org API to retrieve weather data for cities across the United States.
  This application also features Bootstrap and jQuery to update and change the UI, and local storage to save custom city searches.
- A jQuery AJAX (Asynchronous JavaScript And XML) requet - $.ajax() - is used to send a GET request to OpenWeatherMap's API.
+ A jQuery AJAX (Asynchronous JavaScript And XML) request - $.ajax() - is used to send a GET request to OpenWeatherMap's API.
  Then the API sends back a JSON (JavaScript Object Notation) object that can be combed through to grab specific weather data for the desired city.</p> 
 
 ## Table of Contents
@@ -31,7 +31,7 @@ Project Link: https://kopelson.github.io/ajaxWeatherApp/
 ### Error Handler
 ![errorHandler](https://user-images.githubusercontent.com/57735283/95258025-039fc780-07da-11eb-93b8-fc79c30d6100.gif)
 
-<p>If the user searches a city that doesn't exisit in OpenWeatherMap database, an alert will notify the user and the city name will not be added to the list.
+<p>If the user searches a city that doesn't exists in OpenWeatherMap database, an alert will notify the user and the city name will not be added to the list.
  The search input is also cleared after each request </p>
 
 ### Clear City List
@@ -45,7 +45,7 @@ Project Link: https://kopelson.github.io/ajaxWeatherApp/
 ![localstorage](https://user-images.githubusercontent.com/57735283/95258015-013d6d80-07da-11eb-845e-39c3c0250d03.gif)
 
 <p>Local storage is used to save user searches. When the window first loads the default city names will appear in the list. This list is then saved to local storage
- to be reused when the window is reopened. Everytime the user searches a city, the name of the city will be capitalized, saved in the list, and local storage is 
+ to be reused when the window is reopened. Every time the user searches a city, the name of the city will be capitalized, saved in the list, and local storage is 
  updated with the list of city names.</p>
 
 ## Credits
