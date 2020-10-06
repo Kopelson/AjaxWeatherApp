@@ -1,6 +1,10 @@
 # AJAX Weather App
 
 ## Description
+ <p>This weather app focuses on using OpenWeatherMap.org API to retrieve weather data for cities across the United States.
+ This application also features Bootstrap and jQuery to update and change the UI, and local storage to save custom city searches.
+ A jQuery AJAX (Asynchronous JavaScript And XML) requet - $.ajax() - is used to send a GET request to OpenWeatherMap's API.
+ Then the API sends back a JSON (JavaScript Object Notation) object that can be combed through to grab specific weather data for the desired city.</p> 
 
 ## Table of Contents
 
@@ -10,23 +14,39 @@
 
 ## Overview
 Project Link: https://kopelson.github.io/ajaxWeatherApp/
+
 ![overview](https://user-images.githubusercontent.com/57735283/95258455-a5271900-07da-11eb-8493-18c27100543b.PNG)
 
 ### Responsive Design
 ![responsive](https://user-images.githubusercontent.com/57735283/95257999-fa165f80-07d9-11eb-9e26-51c2c18cc9a6.gif)
 
+<p>Bootstrap's grid system allows for the application to be responsive and mobile friendly</p>
+
 ### Search by City
 ![search](https://user-images.githubusercontent.com/57735283/95258003-fbe02300-07d9-11eb-979a-a5a8c303a52d.gif)
+
+<p>Users can search by city using the search input. If the city exists in OpenWeatherMap database, the city name will be added to the list. 
+ Users can click the search icon or press enter to begin the search. </p>
 
 ### Error Handler
 ![errorHandler](https://user-images.githubusercontent.com/57735283/95258025-039fc780-07da-11eb-93b8-fc79c30d6100.gif)
 
+<p>If the user searches a city that doesn't exisit in OpenWeatherMap database, an alert will notify the user and the city name will not be added to the list.
+ The search input is also cleared after each request </p>
+
 ### Clear City List
 ![clear](https://user-images.githubusercontent.com/57735283/95258006-fe427d00-07d9-11eb-9dc4-ad55e4d06f4f.gif)
+
+<p>The clear red button will remove all cities from the list and delete local storage. The user then can customize the search list 
+ by searching new desired cities weather info. If the user does not supply any city names after clearing the list, the default cities will repopulate after a
+ window refresh.</p>
 
 ### Store Custom City List
 ![localstorage](https://user-images.githubusercontent.com/57735283/95258015-013d6d80-07da-11eb-845e-39c3c0250d03.gif)
 
+<p>Local storage is used to save user searches. When the window first loads the default city names will appear in the list. This list is then saved to local storage
+ to be reused when the window is reopened. Everytime the user searches a city, the name of the city will be capitalized, saved in the list, and local storage is 
+ updated with the list of city names.</p>
 
 ## Credits
 
