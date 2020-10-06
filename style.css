@@ -1,22 +1,20 @@
+/* this centers the header */
 header{
     justify-content: center;
 }
-
+/* this changes the display of the city name, date, and weather icon to be inline */
+.display-inline{
+    display: inline-flex !important;
+}
+/* this adjust the size of the today's date weather icon */
+#icon {
+    width: 50px;
+}
+/* this is for the high UV index color of badge */
 .badge-orange{
     background-color: orange;
 }
-
+/* this capitalizes all the city name inputs */
 li {
     text-transform: capitalize;
   }
-
-@media only screen and (max-width: 975px) {
-    #day1, #day2, #day3, #day4, #day5 {
-        display: block !important;
-        justify-content: center;
-        align-items: center;
-        width:100% !important;
-        height: auto;
-    }
-    
-}

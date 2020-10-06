@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Reset CSS -->
-    <link rel="stlyesheet"  type="text/css" href="reset.css">
-    <!-- Bootstrap -->
+    <!-- title -->
+    <title>Weather App</title>
+    <!-- reset CSS -->
+    <link rel="stylesheet"  type="text/css" href="reset.css">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- Style CSS -->
+    <!-- style CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="https://openweathermap.org/img/wn/02d@2x.png">
 </head>
 <body>
+    <!-- Bootstrap container  -->
     <div class="container-fluid">
+        <!-- Bootstrap row -->
         <div class="row">
+            <!-- Bootstrap column -->
             <header class="col-12 nav text-white bg-dark">
                 <nav>
                     <h1>Weather Dashboard</h1>
                 </nav>
             </header>
         </div>
+        <!-- Bootstrap row -->
         <div class="row">
+            <!-- Bootstrap column -->
+            <!-- aside of search feature and city names -->
             <aside class="col-md-3">
                 <label>Search for a City: </label>
                 <div class="input-group mb-3">
+                    <!-- input for city name -->
                     <input type="text" id="city-search-input" class="form-control" placeholder="Seattle" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
+                        <!-- button to add city name to list and get weather data -->
                         <button class="btn btn-primary btn-outline-secondary" type="button" id="city-search-button">
                             <!-- Bootstrap search icon -->
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -36,76 +48,112 @@
                     </div>
                 </div>
                 <article>
-                    <!-- new sections will populate with city names that are stored locally -->
+                    <!-- new li elements will populate with city names that are stored locally -->
                     <ul class="list-group flex-column-reverse">
+                        <!-- initialize list with city names if nothing is in local storage -->
                         <li class="list-group-item">Chicago</li>
                         <li class="list-group-item">New York</li>
                         <li class="list-group-item">Orlando</li>
                         <li class="list-group-item">San Francisco</li>
                         <li class="list-group-item active">Spokane</li>
                     </ul>
-                    <button class="btn btn-danger" onclick="clearCityList()">Clear</button>
+                    <!-- button to clear current displayed list and clears local storage -->
+                    <button class="btn btn-danger float-right" onclick="clearCityList()">Clear</button>
                 </article>
             </aside>
+            <!-- Bootstrap column -->
+            <!-- main jumbotron area will show the city name, todays date, and weather information -->
             <main class="col-md-9">
-                <div class="jumbotron">
-                    <!-- a jumbosized area will show the city name, todays date, and weather information -->
-                    <h3 id="city-name"></h3>
-                    <span><img id="icon"/></span>
+                <article class="jumbotron">
+                    <div class="display-inline">
+                        <!-- city name -->
+                        <h3 id="city-name"></h3>
+                        <!-- weather icon -->
+                        <span class="badge badge-primary"><img id="icon"/></span>
+                    </div>
+                    <!-- temperature -->
                     <h4 id="temperature"></h4>
+                    <!-- humidity -->
                     <h4 id="humidity"></h4>
+                    <!-- wind speed -->
                     <h4 id="wind-speed"></h4>
+                    <!-- uv index -->
                     <h4 id="uv-index"></h4>
-                </div>
+                </article>
+            <!-- Bootstrap row -->
             <div class="row">
-                <div class="col">
-                    <h3 class="ml-4">5-Day Forecast:</h3> 
-                </div>
+                <!-- Bootstrap column -->
+                <section class="col">
+                    <h4 class="ml-4">5-Day Forecast:</h4> 
+                </section>
             </div>
-            <div class="row">
+            <!-- Bootstrap row -->
+            <article class="row">
+                <!-- Bootstrap column -->
                 <!-- 5 day forecast -->
-                <div class="col-md-12" id="forecast">
-                <div id="day1" class="col-md-2 badge badge-primary p-2 m-2">
+                <div class="col-lg-12 d-lg-inline-flex justify-content-lg-between" id="forecast">
+                <!-- day 1 of the 5 day forecast -->
+                <div id="day1" class="badge badge-primary p-2 m-2">
+                    <!-- date -->
                     <h6 id="date-day1"></h6>
-                    <img id="icon-day1">
+                    <!-- weather icon -->
+                    <img id="icon-day1" alt="weather icon">
+                    <!-- temperature -->
                     <h6 id="temperature-day1"></h6>
+                    <!-- humidity -->
                     <h6 id="humidity-day1"></h6>
                 </div>
-                <div id="day2" class="col-md-2 badge badge-primary p-2 m-2">
+                <!-- day 2 of the 5 day forecast -->
+                <div id="day2" class="badge badge-primary p-2 m-2">
+                    <!-- date -->
                     <h6 id="date-day2"></h6>
-                    <img id="icon-day2">
+                    <!-- weather icon -->
+                    <img id="icon-day2" alt="weather icon">
+                    <!-- temperature -->
                     <h6 id="temperature-day2"></h6>
+                    <!-- humidity -->
                     <h6 id="humidity-day2"></h6>
                 </div>
-                <div id="day3" class="col-md-2 badge badge-primary p-2 m-2">
+                <!-- day 3 of the 5 day forecast -->
+                <div id="day3" class="badge badge-primary p-2 m-2">
+                    <!-- date -->
                     <h6 id="date-day3"></h6>
-                    <img id="icon-day3">
+                    <!-- weather icon -->
+                    <img id="icon-day3" alt="weather icon">
+                    <!-- temperature -->
                     <h6 id="temperature-day3"></h6>
+                    <!-- humidity -->
                     <h6 id="humidity-day3"></h6>
                 </div>
-                <div id="day4" class="col-md-2 badge badge-primary p-2 m-2">
+                <!-- day 4 of the 5 day forecast -->
+                <div id="day4" class="badge badge-primary p-2 m-2">
+                    <!-- date -->
                     <h6 id="date-day4"></h6>
-                    <img id="icon-day4">
+                    <!-- weather icon -->
+                    <img id="icon-day4" alt="weather icon">
+                    <!-- temperature -->
                     <h6 id="temperature-day4"></h6>
+                    <!-- humidity -->
                     <h6 id="humidity-day4"></h6>
                 </div>
-                <div id="day5" class="col-md-2 badge badge-primary p-2 m-2">
+                <!-- day 5 of the 5 day forecast -->
+                <div id="day5" class="badge badge-primary p-2 m-2">
+                    <!-- date -->
                     <h6 id="date-day5"></h6>
-                    <img id="icon-day5">
+                    <!-- weather icon -->
+                    <img id="icon-day5" alt="weather icon">
+                    <!-- temperature -->
                     <h6 id="temperature-day5"></h6>
+                    <!-- humidity -->
                     <h6 id="humidity-day5"></h6>
                 </div>
                 </div>
-            </div>
+            </article>
             </main>
         </div>
     </div>
     <!-- jQuery -->
-    <script
-        src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Script JS -->
     <script src="script.js"></script>
 </body>
