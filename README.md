@@ -1,4 +1,4 @@
-# AJAX Weather App
+# AJAX Weather App :
 
 
  This weather app focuses on using OpenWeatherMap.org API to retrieve weather data for cities across the United States.
