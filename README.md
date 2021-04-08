@@ -1,5 +1,6 @@
 # AJAX Weather App
 
+
  This weather app focuses on using OpenWeatherMap.org API to retrieve weather data for cities across the United States.
  This application also features Bootstrap and jQuery to update and change the UI, and local storage to save custom city searches.
  A jQuery AJAX (Asynchronous JavaScript And XML) request - $.ajax() - is used to send a GET request to OpenWeatherMap's API.
